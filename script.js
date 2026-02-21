@@ -1,7 +1,16 @@
+// Hamburger menu toggle
+const hamburger = document.getElementById('hamburger');
+const navMenu = document.getElementById('navMenu');
+
+hamburger.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+});
+
 // Smooth scrolling untuk navigasi
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
+        navMenu.classList.remove('active');
         const target = document.querySelector(this.getAttribute('href'));
         if (target) {
             target.scrollIntoView({

@@ -37,6 +37,23 @@ header h1 {
     font-size: 1.5rem;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: white;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
 .nav-menu {
     display: flex;
     list-style: none;
@@ -248,25 +265,105 @@ footer {
 }
 
 @media (max-width: 768px) {
-    .nav-menu {
-        flex-direction: column;
-        gap: 1rem;
+    .hamburger {
+        display: flex;
+        z-index: 1001;
     }
     
-    header .container {
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 60px;
         flex-direction: column;
+        background: #1a3a52;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 27px rgba(0,0,0,0.05);
+        padding: 2rem 0;
+        gap: 0;
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-menu li {
+        padding: 1rem 0;
+    }
+    
+    .hero {
+        padding: 120px 20px 60px;
     }
     
     .hero-content h2 {
+        font-size: 1.5rem;
+    }
+    
+    .hero-content p {
+        font-size: 1rem;
+    }
+    
+    .section {
+        padding: 50px 20px;
+    }
+    
+    .section-title {
         font-size: 1.8rem;
+        margin-bottom: 2rem;
     }
     
     .profil-content {
         flex-direction: column;
         text-align: center;
+        gap: 1.5rem;
     }
     
-    .section-title {
-        font-size: 2rem;
+    .profil-image img {
+        width: 250px;
+    }
+    
+    .profil-text h3 {
+        font-size: 1.5rem;
+    }
+    
+    .visi-box {
+        padding: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    
+    .visi-box h3 {
+        font-size: 1.5rem;
+    }
+    
+    .visi-box p {
+        font-size: 1.1rem;
+    }
+    
+    .misi-container h3 {
+        font-size: 1.5rem;
+    }
+    
+    .misi-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .misi-card {
+        padding: 1.5rem;
+    }
+    
+    .program-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .program-card {
+        padding: 1.5rem;
+    }
+    
+    .kontak-info {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
     }
 }
